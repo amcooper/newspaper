@@ -1,0 +1,9 @@
+<h1>Princess Peach News</h1>
+<br />
+<%= link_to 'Create an article!', new_article_path %>
+<% @articles.each do |article| %>
+	<h2 class="text-center"><%= link_to article.headline, article_path(article) %></h2>
+	<h3>by <%= article.byline %></h3>
+	<img src="<%= article.photo_url %>" class="img-circle">
+	<p><%= article.content %></p>
+<% end %>
